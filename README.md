@@ -17,7 +17,7 @@ Tailwind Merge (v2.5.2) → Facilita a fusão de classes do Tailwind para evitar
 # Animações com Lottie
 @dotlottie/react-player (v1.6.19) → Player para arquivos .lottie dentro do React.
 @lottiefiles/dotlottie-react (v0.8.7) → Biblioteca para manipulação de animações Lottie.
-🖼️ Manipulação de SVG e Imagens
+Manipulação de SVG e Imagens
 @svgr/webpack (v8.1.0) → Transforma arquivos SVG em componentes React.
 Sharp (v0.33.4) → Biblioteca para otimização e processamento de imagens.
 
@@ -28,7 +28,7 @@ TypeScript (v5) → Suporte a tipagem estática no projeto.
 @types/react-dom (v18) → Definições de tipo para React DOM.
 ESLint (v8) → Linter para melhorar a qualidade do código.
 ESLint Config Next (14.2.5) → Configuração de ESLint específica para Next.js.
-🛠️ Pós-processamento de CSS
+Pós-processamento de CSS
 PostCSS (v8) → Processador de CSS utilizado pelo Tailwind.
 
 ## License
