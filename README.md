@@ -1,6 +1,8 @@
 # Milliark Landing Page
 # Coded by: Pedro Trotta
 https://portfolio-trotta-ee4f17bbabe0.herokuapp.com/
+https://www.milliar.com
+![milliark-gif-preview](https://github.com/user-attachments/assets/259b0d34-784a-4943-9ad5-438205094f33)
 
 # Framework e Core do Projeto
 Next.js (v14.2.5) → Framework React para aplicações web otimizadas (SSR, SSG e ISR).
@@ -34,3 +36,4 @@ PostCSS (v8) → Processador de CSS utilizado pelo Tailwind.
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
