@@ -1,7 +1,7 @@
 # Milliark Landing Page
 # Coded by: Pedro Trotta
-https://portfolio-trotta-ee4f17bbabe0.herokuapp.com/
-https://www.milliar.com
+# https://portfolio-trotta-ee4f17bbabe0.herokuapp.com/
+# https://www.milliark.com
 ![milliark-gif-preview](https://github.com/user-attachments/assets/259b0d34-784a-4943-9ad5-438205094f33)
 
 # Framework e Core do Projeto
