@@ -18,19 +18,18 @@ const HeadquarterCard: React.FC<HeadquarterCardProps> = ({ location, image }) =>
   )}`;
 
   return (
-    <div className="group relative w-full sm:w-64 h-64 sm:h-80 rounded-xl overflow-hidden shadow-2xl cursor-pointer">
-      {/* The Image component uses fill to cover the entire card */}
+    <div className="group relative w-full sm:w-80 h-64 sm:h-80 rounded-xl overflow-hidden shadow-2xl cursor-pointer">
       <Image
         src={image}
         alt={location}
         fill
         className="object-cover border-l-2 border-yellow-600"
       />
-      {/* Always visible location label */}
+
       <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2">
         <h3 className="text-white font-bold text-lg">{location}</h3>
       </div>
-      {/* On hover, display an overlay with a link to Google Maps */}
+
       <a
         href={mapsUrl}
         target="_blank"
@@ -61,7 +60,7 @@ export const Headquarter = () => {
       <h2 className="text-center text-5xl md:text-6xl font-bold text-white mb-12">
         Our Headquarters
       </h2>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 place-items-center md:grid-cols-3 lg:grid-cols-5">
         {locations.map((loc, index) => (
           <HeadquarterCard
             key={index}
