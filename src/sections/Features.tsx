@@ -1,54 +1,14 @@
 "use client";
-import { ProductImage } from "@/assets";
 import { featuresTabs } from "@/data/data";
-import {
-  animate,
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  ValueAnimationTransition,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import FeatureTab from "@/components/FeatureTab";
 
 export const Features = () => {
-  const [currentTab, setCurrentTab] = useState<number>(0);
-  const backgroundPositionX = useMotionValue(
-    featuresTabs[0].backgroundPositionX,
-  );
-  const backgroundPositionY = useMotionValue(
-    featuresTabs[0].backgroundPositionY,
-  );
-  const backgroundSizeX = useMotionValue(featuresTabs[0].backgroundSizeX);
-
-  const backgroundPosition = useMotionTemplate`${backgroundPositionX}% ${backgroundPositionY}%`;
-  const backgroundSize = useMotionTemplate`${backgroundSizeX}% auto`;
+  const [currentTab, setCurrentTab] = useState<number | null>(null);
 
   const handleSelectTab = (tabIndex: number) => {
     setCurrentTab(tabIndex);
-
-    const animateOptions: ValueAnimationTransition = {
-      duration: 2,
-      ease: "easeInOut",
-    };
-
-    animate(
-      backgroundSizeX,
-      [backgroundSizeX.get(), 100, featuresTabs[tabIndex].backgroundSizeX],
-      animateOptions,
-    );
-
-    animate(
-      backgroundPositionX,
-      [backgroundPositionX.get(), featuresTabs[tabIndex].backgroundPositionX],
-      animateOptions,
-    );
-
-    animate(
-      backgroundPositionY,
-      [backgroundPositionY.get(), featuresTabs[tabIndex].backgroundPositionY],
-      animateOptions,
-    );
   };
 
   return (
@@ -61,25 +21,44 @@ export const Features = () => {
           From small startups to large enterprises, our team has
           revolutionized the way businesses approach the market.
         </p>
-        <div className="flex flex-col lg:flex-row gap-3 mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-10">
           {featuresTabs.map((tab, tabIndex) => (
             <FeatureTab
               key={tabIndex}
-              {...tab}
+              title={tab.title}
+              icon={tab.icon}
+              isNew={tab.isNew}
+              description={tab.description ?? ""}
+              backgroundPositionX={tab.backgroundPositionX}
+              backgroundPositionY={tab.backgroundPositionY}
+              backgroundSizeX={tab.backgroundSizeX}
               onClick={() => handleSelectTab(tabIndex)}
               selected={currentTab === tabIndex}
             />
           ))}
         </div>
-        <div className="p-2.5 border border-white/20 rounded-xl mt-3">
-          <motion.div
-            className="aspect-video bg-cover border border-white/20 rounded-lg mt-3"
-            style={{
-              backgroundPosition,
-              backgroundSize,
-              backgroundImage: `url(${ProductImage.src})`,
-            }}
-          ></motion.div>
+
+        {/* Cards */}
+        <div className="mt-6 relative">
+          <AnimatePresence>
+            {currentTab !== null && featuresTabs[currentTab].description && (
+              <motion.div
+                key={currentTab}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="p-6 bg-white/10 border border-white/20 rounded-xl shadow-xl text-white"
+              >
+                <h3 className="text-2xl font-semibold">
+                  {featuresTabs[currentTab].title}
+                </h3>
+                <p className="mt-3 text-white/70">
+                  {featuresTabs[currentTab].description}
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </section>
