@@ -30,7 +30,7 @@ export { default as ExpressaLogo } from "@/assets/logo-expressa.png";
 export { default as MedleyLogo } from "@/assets/logo-medley.png";
 export { default as MerckLogo } from "@/assets/logo-merck.png";
 export { default as BrasterapicaLogo } from "@/assets/logo-brasterapica.png";
-export { default as Logo } from "@/assets/icon-millliark.svg";
+export { default as Logo } from "@/assets/logomilliark.jpeg";
 export { default as ProductImage } from "@/assets/product-image.png";
 export { default as SocialInstagram } from "@/assets/social-instagram.svg";
 export { default as SocialX } from "@/assets/social-x.svg";

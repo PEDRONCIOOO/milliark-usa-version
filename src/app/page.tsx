@@ -9,6 +9,7 @@ import { LogoTicker } from "@/sections/LogoTicker";
 import { Testimonials } from "@/sections/Testimonials";
 import { Christiano } from "@/sections/Christiano";
 import { Headquarter } from "@/sections/Headquarter";
+import { ParticlesBg } from "@/sections/Particles";
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <Features />
         <Testimonials />
         <CallToAction />
+        <ParticlesBg />
         <Christiano />
         <Headquarter />
         <Footer />

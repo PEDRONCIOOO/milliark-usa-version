@@ -2,9 +2,11 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/Button";
-import { StarsImage } from "@/assets";
+import { Logo, StarsImage } from "@/assets";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
+import Image from "next/image";
 
 
 const Planet = () => {
@@ -58,6 +60,16 @@ export const Hero = () => {
   const backgroundPositionY = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
   return (
+    <AnimatedContent
+    distance={-150}
+    direction="horizontal"
+    reverse={false}
+    config={{ tension: 80, friction: 20 }}
+    initialOpacity={0.2}
+    animateOpacity
+    scale={1.1}
+    threshold={0.2}
+    >
     <motion.section
       ref={sectionRef}
       className="h-[492px] md:h-[800px] flex items-center overflow-hidden relative [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
@@ -109,9 +121,7 @@ export const Hero = () => {
 
       {/* Content Container */}
       <div className="container relative mt-16">
-        <h1 className="text-8xl md:text-[128px] md:leading-none font-semibold tracking-tighter text-center bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,rgba(218,165,32,0.5))] text-transparent bg-clip-text">
-          Milliark Investments
-        </h1>
+        <Image className="flex rounded-xl justify-self-center shadow-lg shadow-[#ffffff42]" src={Logo} alt="Milliark Logo" width={200} height={140} />
         <p className="text-lg md:text-xl text-white/70 mt-5 text-center max-w-xl mx-auto">
         At Milliark, we deliver for investors by buildin businesses that power tomorrows economy
         </p>
@@ -120,5 +130,6 @@ export const Hero = () => {
         </div>
       </div>
     </motion.section>
+    </AnimatedContent>
   );
 };

@@ -3,6 +3,7 @@ import { featuresTabs } from "@/data/data";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import FeatureTab from "@/components/FeatureTab";
+import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
 
 export const Features = () => {
   const [currentTab, setCurrentTab] = useState<number | null>(null);
@@ -12,6 +13,17 @@ export const Features = () => {
   };
 
   return (
+    <AnimatedContent
+    distance={150}
+    direction="horizontal"
+    reverse={false}
+    delay={0.3}
+    config={{ tension: 80, friction: 20 }}
+    initialOpacity={0.2}
+    animateOpacity
+    scale={1.1}
+    threshold={0.2}
+    >
     <section className="py-20 md:py-24" id="what-we-offer">
       <div className="container">
         <h2 className="text-5xl md:text-6xl font-medium text-center tracking-tighter">
@@ -62,5 +74,6 @@ export const Features = () => {
         </div>
       </div>
     </section>
+    </AnimatedContent>
   );
 };

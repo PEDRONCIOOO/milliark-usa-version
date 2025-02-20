@@ -106,7 +106,7 @@ export const testimonials = [
 export const TeamMilliark = [
   {
     name: "Christiano Trotta",
-    role: "Director / CTO",
+    role: "President LatAm America",
     avatarImg: ChrisAvatar,
   },
   {

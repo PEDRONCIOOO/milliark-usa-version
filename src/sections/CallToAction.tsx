@@ -11,6 +11,8 @@ import Link from "next/link";
 import { useRef } from "react";
 import useRelativeMousePosition from "@/hooks/useRelativeMousePosition";
 
+import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
+
 export const CallToAction = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const borderedDivRef = useRef<HTMLDivElement>(null);
@@ -29,6 +31,17 @@ export const CallToAction = () => {
   const maskImage = useMotionTemplate`radial-gradient(50% 50% at ${mouseX}px ${mouseY}px, black, transparent)`;
 
   return (
+    <AnimatedContent
+    distance={100}
+    direction="vertical"
+    reverse={false}
+    delay={0.3}
+    config={{ tension: 80, friction: 20 }}
+    initialOpacity={0.2}
+    animateOpacity
+    scale={1.1}
+    threshold={0.2}
+    >
     <section ref={sectionRef} className="py-20 md:py-24" id="contact">
       <div className="container">
         <motion.div
@@ -74,5 +87,6 @@ export const CallToAction = () => {
         </motion.div>
       </div>
     </section>
+    </AnimatedContent>
   );
 };

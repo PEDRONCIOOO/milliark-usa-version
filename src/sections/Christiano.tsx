@@ -6,6 +6,8 @@ import { Button } from "@/components/Button";
 import TeamMemberBox from "./TeamMemberBox";
 import { TeamMilliark as teamData } from "@/data/data";
 
+import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
+
 export const Christiano = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -16,6 +18,17 @@ export const Christiano = () => {
   const containerOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
 
   return (
+    <AnimatedContent
+    distance={150}
+    direction="horizontal"
+    reverse={false}
+    delay={0.3}
+    config={{ tension: 80, friction: 20 }}
+    initialOpacity={0.2}
+    animateOpacity
+    scale={1.1}
+    threshold={0.2}
+    >
     <motion.div
       ref={containerRef}
       style={{ opacity: containerOpacity }}
@@ -38,5 +51,6 @@ export const Christiano = () => {
       </div>
         <div className="items-center place-items-center place-content-center flex pt-8"><Link href="tel:+5511975544049"><Button>Talk To Us</Button></Link></div>
     </motion.div>
+    </AnimatedContent>
   );
 };

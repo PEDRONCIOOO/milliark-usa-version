@@ -3,8 +3,21 @@ import { testimonials } from "@/data/data";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import AnimatedContent from "@/blocks/Animations/AnimatedContent/AnimatedContent";
+
 export const Testimonials = () => {
   return (
+    <AnimatedContent
+    distance={-100}
+    direction="vertical"
+    reverse={false}
+    delay={0.3}
+    config={{ tension: 80, friction: 20 }}
+    initialOpacity={0.2}
+    animateOpacity
+    scale={1.1}
+    threshold={0.2}
+    >
     <section className="py-20 md:py-24">
       <div className="container">
         <h2 className="text-5xl md:text-6xl text-center font-medium tracking-tighter">
@@ -58,5 +71,6 @@ export const Testimonials = () => {
         </div>
       </div>
     </section>
+    </AnimatedContent>
   );
 };
