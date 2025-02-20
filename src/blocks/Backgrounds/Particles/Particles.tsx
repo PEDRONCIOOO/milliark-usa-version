@@ -114,7 +114,7 @@ const Particles: React.FC<ParticlesProps> = ({
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container) {return};
 
     const renderer = new Renderer({ depth: false, alpha: true });
     const gl = renderer.gl;
