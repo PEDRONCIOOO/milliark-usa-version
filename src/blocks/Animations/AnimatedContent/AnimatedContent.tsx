@@ -6,6 +6,7 @@
 
 import { useRef, useEffect, useState, ReactNode } from "react";
 import { useSpring, animated, SpringConfig } from "@react-spring/web";
+import React from "react";
 
 interface AnimatedContentProps {
   children: ReactNode;
